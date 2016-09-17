@@ -1,8 +1,13 @@
 'use strict';
 
-const bitFileHelper = require('./lib/bit-file-helper.js');
+const readBitFile = require('./lib/bit-file-helper.js');
+const bitMapConstructor = require('./model/bit-map-constructor.js');
 
 
-bitFileHelper(function(data){
-  console.log('work', data);
+readBitFile(function(bitmap, ){
+  console.log('work', bitmap);
+  bitMapConstructor(bitmap);
+  bitMapConstructor.changeColorGreen(bitmap, )
+  // console.log(bitmap);
+  // console.log(bitMapConstructor);
 });

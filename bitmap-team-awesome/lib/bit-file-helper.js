@@ -1,13 +1,13 @@
 'use strict';
 
 const fs = require('fs');
-const Bitmap = require('../model/bit-map-constructor.js');
+const Buffer = require('../model/bit-map-constructor.js');
 
 module.exports = function(callback) {
   fs.readFile(`${__dirname}/../../assets/bitmap.bmp`, function(err, data){
     if (err) return callback(err);
-    var bitmap = new Bitmap(data);
-    callback(null, bitmap);
+    var bitmap = data;
+    callback(bitmap);
   });
 };
   // console.log('# of pixels or pixel array size', 11078 - 1078);

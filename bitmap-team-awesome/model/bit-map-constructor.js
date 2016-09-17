@@ -1,16 +1,21 @@
 'use strict';
 
-const buffer = require('../lib/bit-file-helper.js');
+// const buf = require('../lib/bit-file-helper.js');
 
-module.exports = function Bitmap(buffer, object){
-  this.buffer = buffer;
+module.exports = function Bitmap(data){
+  var headerData = {};
+  var buffer = data;
+  console.log(buffer);
+  headerData.title = buffer.readUInt32LE(2);
+
   this.colorOffset = buffer.readUInt32LE(10);
-  this.colorArray =
-}
+  // this.colorArray = [];
 
-Bitmap.prototype.changeColorRed = function(){
-  
-}
+};
+
+Buffer.prototype.changeColorRed = function(){
+
+};
 
 
 
@@ -24,4 +29,3 @@ Bitmap.prototype.changeColorRed = function(){
 //       // console.log(`${i},${x}: ${data.readUInt8(x)}`);
 //     }
 //   }
-};
