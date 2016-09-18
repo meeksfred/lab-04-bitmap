@@ -8,7 +8,10 @@ const colorConstructor = require('./model/color-constructor');
 readBitFile(function(bitmap){
   // console.log('work', bitmap);
   // bitMapConstructor(bitmap);
-  colorConstructor.changeColorBlue(bitmap, bitMapObject);
-  // console.log(bitmap);
-  // console.log(bitMapConstructor);
+  // colorConstructor.invertColor(bitmap, bitMapObject);
+  colorConstructor.grayScaleColor(bitmap, bitMapObject);
+  // colorConstructor.rgbScaleColor(bitmap, bitMapObject);
+  // colorConstructor.changeColorBlue(bitmap, bitMapObject);
+  // colorConstructor.changeColorGreen(bitmap, bitMapObject);
+  // colorConstructor.changeColorRed(bitmap, bitMapObject);
 });
