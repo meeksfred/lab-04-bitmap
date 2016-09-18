@@ -1,13 +1,24 @@
 'use strict';
 
 const fs = require('fs');
-const Buffer = require('../model/bit-map-constructor.js');
+const bufferObject = require('../model/bit-map-constructor');
 
-module.exports = function(callback) {
+module.exports = function(callback, callback2) {
   fs.readFile(`${__dirname}/../../assets/bitmap.bmp`, function(err, data){
     if (err) return callback(err);
     var bitmap = data;
-    callback(bitmap);
+    callback2 = new bufferObject(data);
+
+    // var x,i;
+    //   for (i=54;i<=buffer.offset;i+=4){
+    //     for (x=i;x<i+4;x++){
+    //       // data.slice()
+    //       newColorArray.push(data.readUInt8(x));
+    //
+    //       // console.log(`${i},${x}: ${data.readUInt8(x)}`);
+    //     }
+    //   }
+    callback(bitmap, callback2);
   });
 };
   // console.log('# of pixels or pixel array size', 11078 - 1078);
