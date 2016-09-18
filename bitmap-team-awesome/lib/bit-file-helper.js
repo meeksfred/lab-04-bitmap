@@ -8,16 +8,6 @@ module.exports = function(callback, callback2) {
     if (err) return callback(err);
     var bitmap = data;
     callback2 = new bufferObject(data);
-
-    // var x,i;
-    //   for (i=54;i<=buffer.offset;i+=4){
-    //     for (x=i;x<i+4;x++){
-    //       // data.slice()
-    //       newColorArray.push(data.readUInt8(x));
-    //
-    //       // console.log(`${i},${x}: ${data.readUInt8(x)}`);
-    //     }
-    //   }
     callback(bitmap, callback2);
   });
 };
