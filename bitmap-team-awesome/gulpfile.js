@@ -17,7 +17,7 @@ gulp.task('test', function(){
 });
 
 gulp.task('dev', function(){
-  gulp.watch(['./lib/*.js', './test/*.js'], ['test', 'lint']);
+  gulp.watch(['./lib/*.js', './model/*.js', './test/*.js'], ['test', 'lint']);
 });
 
 gulp.task('default', ['dev']);

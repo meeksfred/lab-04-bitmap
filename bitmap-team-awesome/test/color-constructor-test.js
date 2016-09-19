@@ -1,7 +1,7 @@
 'use strict';
 
-const expect = require('chai').expect;
-const colorConstructor = require('../model/color-constructor');
+// const expect = require('chai').expect;
+// const colorConstructor = require('../model/color-constructor');
 
 // Need some help with how to properly test these functions
 

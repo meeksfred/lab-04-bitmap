@@ -13,7 +13,6 @@ exports.changeColorBlue = function(buffer, bufferObject) {
     blueColorArray[x+2] = 0;
     blueColorArray[x+3] = 0;
   }
-  console.log('buff slice', buffer);
   fs.writeFile(`${__dirname}/../../assets/newBM/change-color-blue-test.bmp`, buffer, function(err){
     if (err) throw err;
   });
