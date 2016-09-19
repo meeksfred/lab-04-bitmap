@@ -1,11 +1,11 @@
 'use strict';
 
 // const expect = require('chai').expect;
-// const colorConstructor = require('../model/color-constructor');
+// const colorConstructor = require('../model/color-transform');
 
 // Need some help with how to properly test these functions
 
-describe('module colorConstructor', function(){
+describe('module color-transform', function(){
   describe('testing changeColorBlue()', function(){
     it('should change each b value in rgba to 255', function(){
     });

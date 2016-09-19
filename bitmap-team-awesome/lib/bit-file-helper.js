@@ -1,13 +1,13 @@
 'use strict';
 
 const fs = require('fs');
-const bufferObject = require('../model/bit-map-constructor');
+const Bitmap = require('../model/bitmap');
 
 module.exports = function(callback, callback2) {
   fs.readFile(`${__dirname}/../../assets/bitmap.bmp`, function(err, data){
     if (err) return callback(err);
     var bitmap = data;
-    callback2 = new bufferObject(data);
+    callback2 = new Bitmap(data);
     callback(null, bitmap, callback2);
   });
 };

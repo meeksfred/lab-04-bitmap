@@ -1,14 +1,14 @@
 'use strict';
 
 const readBitFile = require('./lib/bit-file-helper');
-const colorConstructor = require('./model/color-constructor');
+const colorTransform = require('./lib/color-transform');
 const EE = require('events');
 const ee = new EE();
 
 ee.on('first', function(){
   readBitFile(function(err, bitmap, bitMapObject){
     if(err) return ee.emit('error', err);
-    colorConstructor.grayScaleColor(bitmap, bitMapObject);
+    colorTransform.grayScaleColor(bitmap, bitMapObject);
     ee.emit('second');
   });
 });
@@ -16,7 +16,7 @@ ee.on('first', function(){
 ee.on('second', function(){
   readBitFile(function(err, bitmap, bitMapObject){
     if(err) return ee.emit('error', err);
-    colorConstructor.rgbScaleColor(bitmap, bitMapObject);
+    colorTransform.rgbScaleColor(bitmap, bitMapObject);
     ee.emit('third');
   });
 });
@@ -24,7 +24,7 @@ ee.on('second', function(){
 ee.on('third', function(){
   readBitFile(function(err, bitmap, bitMapObject){
     if(err) return ee.emit('error', err);
-    colorConstructor.invertColor(bitmap, bitMapObject);
+    colorTransform.invertColor(bitmap, bitMapObject);
   });
 });
 

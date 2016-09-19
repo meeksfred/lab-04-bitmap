@@ -1,15 +1,15 @@
 'use strict';
 
 const expect = require('chai').expect;
-const constructor = require('../model/bit-map-constructor');
+const Bitmap = require('../model/bitmap.js');
 
-describe('module bitMapConstructor', function(){
-  describe('bitMapConstructor object constructor', function(){
+describe('module bitmap', function(){
+  describe('bitmap object constructor', function(){
     it('should create an object with property colorOffSet', function(){
-      expect(constructor.colorOffSet).to.eql(1078);
+      expect(Bitmap.colorOffSet).to.eql(1078);
     });
     it('should return undefined for property that does not exist', function(){
-      expect(constructor.notProperty).to.equal(undefined);
+      expect(Bitmap.notProperty).to.equal(undefined);
     });
   });
 });
