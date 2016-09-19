@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = exports = {};
+exports.changeColorBlue = function(data, bitmapData) {
 
-exports.changeColorGreen = function(data, bitmapData) {
-
-}
+};

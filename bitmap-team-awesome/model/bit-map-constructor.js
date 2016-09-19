@@ -1,31 +1,30 @@
 'use strict';
 
-// const buf = require('../lib/bit-file-helper.js');
-
+const buffer = require('../lib/bit-file-helper.js');
+const fs = require('fs');
 module.exports = function Bitmap(data){
   var headerData = {};
   var buffer = data;
   console.log(buffer);
   headerData.title = buffer.readUInt32LE(2);
-
-  this.colorOffset = buffer.readUInt32LE(10);
-  // this.colorArray = [];
-
 };
 
-Buffer.prototype.changeColorRed = function(){
+exports.changeColorBlue = function(buffer, bufferObject) {
+  var blueColorArray = buffer.slice(54, bufferObject.colorOffSet);
+  console.log('object', bufferObject);
 
+  module.exports.changeColorBlue = function(){
+    for(var i=0; i<blueColorArray.length; i+=4) {
+      blueColorArray[0] = 0;
+      blueColorArray[i+1] = 255;
+      blueColorArray[i+2] = 0;
+      blueColorArray[i+3] = 0;
+    }
+  };
+  console.log('buff slice', blueColorArray);
 };
 
-
-
-// bitmap.changeColorRed = function(){
-//   var x,i;
-//   for (i=54;i<=buffer.offset;i+=4){
-//     for (x=i;x<i+4;x++){
-//       // data.slice()
-//       newColorArray.push(data.readUInt8(x));
-//
-//       // console.log(`${i},${x}: ${data.readUInt8(x)}`);
-//     }
-//   }
+fs.writeFile(`${__dirname}/../../assets/new-bit-map/change-color-test-blue.bmp`, buffer, function(){
+  // if (err) throw err;
+  console.log('INSIDE THE FS.WRITE-FILE.');
+});
