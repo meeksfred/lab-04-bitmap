@@ -8,7 +8,7 @@ module.exports = function(callback, callback2) {
     if (err) return callback(err);
     var bitmap = data;
     callback2 = new bufferObject(data);
-    callback(bitmap, callback2);
+    callback(null, bitmap, callback2);
   });
 };
   // console.log('# of pixels or pixel array size', 11078 - 1078);
