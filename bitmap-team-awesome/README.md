@@ -1,6 +1,7 @@
 #Bitmap Transformer
 
 This is Max & Ron's version of the Bitmap Transformer for Code 401 JS.
+
 The bitmap.bmp file is initially read in, saving both the buffer data itself, and creating an object that contains the header data from the bitmap file.
 
 Once the file is read in, three different transforms alter the original bitmap.bmp file:
