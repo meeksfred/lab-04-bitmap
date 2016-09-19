@@ -8,6 +8,7 @@ Once the file is read in, three different transforms alter the original bitmap.b
 - A transform which grayscale's the bitmap colors
 - A transform which inverts color values in the bitmap image
 - A transform which scales the color palette a green hue
+
 The results of these transforms can be seen in the newBM directory.
 
 Dependencies for the project are listed in the package.json file.
